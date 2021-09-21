@@ -1,5 +1,8 @@
-import hero from "./components/hero"
+import { exerciseButtons, exerciseModal } from "./components"
+import displayController from "./displayController"
 import "./style.css"
 import "normalize.css"
 
-document.body.appendChild(hero())
+displayController()
+// exerciseButtons()
+// exerciseModal()

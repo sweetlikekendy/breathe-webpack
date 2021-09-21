@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-img-container center">
+      <img class="hero-img" inline src="./undraw_mindfulness_scgo.svg" alt="Stock image of women meditating">
+    </div>
+    <h1 class="text-center">
+      Don't Forget To Breathe
+    <h1>
+  </div>
+  <div class="text-center">
+    <div class="duration">
+      <h2 class="duration-title text-center">Select Your Meditation Duration</h2>
+      <div class="center">
+        <div class="duration-input">
+          <label for="duration">Duration</label>
+          <select id="duration" name="duration">
+            <option value="5-mins">5 mins</option>
+            <option value="10-mins">10 mins</option>
+            <option value="15-mins">15 mins</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="exercise">
+    <h2 class="exercise-title text-center">Select Your Meditation Exercise</h2>
+    <div class="exercise-grid">
+      <div class="exercise-choose-exercise primary-button">
+        <div class="space-between">
+          <div class="exercise-text">
+            <div class="exercise-meditation-title"></div>
+            <div class="exercise-description"></div>
+          </div>
+          <div class="exercise-arrow-button"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m7.29289 3.29289c.39053-.39052 1.02369-.39052 1.41422 0l7.99999 8.00001c.3905.3905.3905 1.0237 0 1.4142l-7.99999 8c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142l7.29291-7.2929-7.29291-7.29289c-.39052-.39053-.39052-1.02369 0-1.41422z" fill="#1E40AF" fill-rule="evenodd"/></svg></div>
+        </div>
+      </div>
+      <div class="exercise-choose-exercise primary-button">
+        <div class="space-between">
+          <div class="exercise-text">
+            <div class="exercise-meditation-title"></div>
+            <div class="exercise-description"></div>
+          </div>
+          <div class="exercise-arrow-button"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m7.29289 3.29289c.39053-.39052 1.02369-.39052 1.41422 0l7.99999 8.00001c.3905.3905.3905 1.0237 0 1.4142l-7.99999 8c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142l7.29291-7.2929-7.29291-7.29289c-.39052-.39053-.39052-1.02369 0-1.41422z" fill="#1E40AF" fill-rule="evenodd"/></svg></div>
+        </div>
+      </div>
+      <div class="exercise-choose-exercise primary-button">
+        <div class="space-between">
+          <div class="exercise-text">
+            <div class="exercise-meditation-title"></div>
+            <div class="exercise-description"></div>
+          </div>
+          <div class="exercise-arrow-button"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m7.29289 3.29289c.39053-.39052 1.02369-.39052 1.41422 0l7.99999 8.00001c.3905.3905.3905 1.0237 0 1.4142l-7.99999 8c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142l7.29291-7.2929-7.29291-7.29289c-.39052-.39053-.39052-1.02369 0-1.41422z" fill="#1E40AF" fill-rule="evenodd"/></svg></div>
+        </div>
+      </div>
+      <div class="exercise-choose-exercise primary-button">
+        <div class="space-between">
+          <div class="exercise-text">
+            <div class="exercise-meditation-title"></div>
+            <div class="exercise-description"></div>
+          </div>
+          <div class="exercise-arrow-button"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m7.29289 3.29289c.39053-.39052 1.02369-.39052 1.41422 0l7.99999 8.00001c.3905.3905.3905 1.0237 0 1.4142l-7.99999 8c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142l7.29291-7.2929-7.29291-7.29289c-.39052-.39053-.39052-1.02369 0-1.41422z" fill="#1E40AF" fill-rule="evenodd"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="exercise-modal hidden">
+    <svg class="exercise-modal-close-button" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#1E40AF" fill="none" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#1E40AF" d="M7.79999 6.59998L16.2 17.4"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#1E40AF" d="M16.2 6.59998L7.79999 17.4"></path>
+    </svg>
+    <div class="exercise-modal-content">
+      <div class="center">
+        <div class="height-100">
+          <h2 class="exercise-modal-content-title"></h2>
+          <div class="exercise-model-content-description"></div>
+          <div class="exercise-modal-content-explanation">
+          </div>
+          <div class="exercise-modal-start-button text-center primary-button">Start</div>
+          <!-- <div class="exercise-modal-close-button text-center secondary-button">Close</div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

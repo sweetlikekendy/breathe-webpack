@@ -1,3 +1,264 @@
+/* My styling */
+
+/* Variables */
+:root {
+  --mobile-width: 300px;
+  --normal-width: 345px;
+  --primary-title-color: #1e3a8a;
+  --secondary-title-color: #1f2937;
+  --font-color: #9ca3af;
+  --button-border-radius: 0.5rem;
+  --button-padding: 1rem;
+  --primary-button-bg-color: #eff6ff;
+  --primary-button-bg-hover-color: #dbeafe;
+  --primary-button-text-color: #1e3a8a;
+  --primary-button-border-color: none;
+  --secondary-button-bg-color: transparent;
+  --secondary-button-bg-hover-color: #1e3a8a;
+  --secondary-button-text-color: #1e3a8a;
+  --secondary-button-text-hover-color: #fff;
+  --secondary-button-border-color: #1e3a8a;
+}
+
+*,
+::before,
+::after {
+  --tw-shadow: 0 0 #0000;
+}
+
+/*  */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  /* background-color: red; */
+  font-family: "Roboto", "Arial", sans-serif;
+  color: var(--font-color);
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-title-color);
+}
+
+/* Utilty classes */
+
+.center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.primary-button {
+  padding: var(--button-padding);
+  background: var(--primary-button-bg-color);
+  color: var(--primary-button-text-color);
+  border-radius: var(--button-border-radius);
+  margin-bottom: 1rem;
+
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: box-shadow 0.2s cubic-bezier(0.37, 0, 0.63, 1),
+    background 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.secondary-button {
+  padding: var(--button-padding);
+  background: var(--secondary-button-bg-color);
+  color: var(--secondary-button-text-color);
+  border-radius: var(--button-border-radius);
+  margin-bottom: 1rem;
+  border: 1px solid var(--secondary-button-border-color);
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: box-shadow 0.2s cubic-bezier(0.37, 0, 0.63, 1),
+    background 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+/* Start of custom styling */
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  height: var(--mobile-width);
+  width: var(--mobile-width);
+}
+
+.duration {
+  display: inline-block;
+  border-bottom: 1px solid var(--font-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  width: var(--mobile-width);
+}
+
+.duration-title {
+  margin-bottom: 2rem;
+}
+
+.duration-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duration label {
+  /* color: var(--primary-title-color); */
+  color: var(--font-color);
+}
+
+.duration-input select {
+  /* color: var(--font-color); */
+  border: none;
+}
+
+.exercise {
+  width: var(--mobile-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.exercise-grid {
+  /* padding: 1rem; */
+}
+
+.exercise-title {
+  margin-bottom: 2rem;
+}
+
+.exercise-meditation-title {
+  color: var(--primary-title-color);
+  margin-bottom: 0.5rem;
+}
+
+.exercise-arrow-button {
+  background-color: transparent;
+  border: none;
+  padding: 0.25rem;
+}
+
+.exercise-modal {
+  height: 90vh;
+  width: var(--mobile-width);
+  padding: 1rem;
+  position: fixed;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.exercise-modal-content {
+  height: 100%;
+}
+
+.exercise-model-content-description {
+  color: var(--secondary-title-color);
+  font-weight: 700;
+}
+
+.exercise-modal-close-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.exercise-modal-content-explanation ol {
+  padding-left: 1rem;
+}
+
+.exercise-modal-start-button {
+  width: 100%;
+  color: var(--primary-title-color);
+  background: var(--primary-button-bg-color);
+  padding: primary;
+  cursor: pointer;
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+}
+
+@media screen and (min-width: 500px) {
+  .duration {
+    width: var(--normal-width);
+  }
+
+  .duration-title {
+    margin-bottom: 2rem;
+  }
+
+  .duration-input {
+    width: 400px;
+  }
+
+  .hero-img {
+    height: var(--normal-width);
+    width: var(--normal-width);
+  }
+
+  .exercise {
+    width: var(--normal-width);
+  }
+
+  .exercise-grid {
+    grid-template-columns: var(--normal-width);
+  }
+
+  .exercise-title {
+    width: var(--normal-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .exercise-choose-exercise {
+    /* width: var(--normal-width); */
+    /* width: 100%; */
+  }
+
+  .exercise-modal {
+    width: var(--normal-width);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .primary-button:hover,
+  .exercise-choose-exercise:hover,
+  .exercise-modal-start-button:hover {
+    background: var(--primary-button-bg-hover-color);
+    cursor: pointer;
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
