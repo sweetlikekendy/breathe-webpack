@@ -4,20 +4,47 @@
 :root {
   --mobile-width: 300px;
   --normal-width: 345px;
-  --primary-title-color: #1e3a8a;
-  --secondary-title-color: #1f2937;
-  --font-color: #9ca3af;
-  --button-border-radius: 0.5rem;
+  --white: #fff;
+  --black: #000;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: ##6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --primary-title-color: var(--blue-900);
+  --secondary-title-color: var(--gray-800);
+  --font-color: var(--gray-400);
+  --border-radius: 0.5rem;
   --button-padding: 1rem;
-  --primary-button-bg-color: #eff6ff;
-  --primary-button-bg-hover-color: #dbeafe;
-  --primary-button-text-color: #1e3a8a;
+  --primary-button-bg-color: var(--blue-700);
+  --primary-button-bg-hover-color: var(--blue-900);
+  --primary-button-text-color: var(--white);
   --primary-button-border-color: none;
-  --secondary-button-bg-color: transparent;
-  --secondary-button-bg-hover-color: #1e3a8a;
-  --secondary-button-text-color: #1e3a8a;
-  --secondary-button-text-hover-color: #fff;
-  --secondary-button-border-color: #1e3a8a;
+  --secondary-button-bg-color: var(--blue-100);
+  --secondary-button-bg-hover-color: var(--blue-200);
+  --secondary-button-text-color: var(--blue-900);
+  --secondary-button-text-hover-color: var(--white);
+  --secondary-button-border-color: none;
+  --choose-exercise-button-bg-color: var(--blue-50);
+  --choose-exercise-button-bg-hover-color: var(--blue-100);
+  --choose-exercise-button-primary-text-color: var(--blue-900);
+  --choose-exercise-button-secondary-text-color: var(--gray-400);
+  --choose-exercise-button-border-color: none;
 }
 
 *,
@@ -35,6 +62,10 @@ body {
   font-family: "Roboto", "Arial", sans-serif;
   color: var(--font-color);
   position: relative;
+}
+
+main {
+  /* margin: 5rem auto; */
 }
 
 h1,
@@ -69,13 +100,23 @@ h6 {
   display: none;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-1-half {
+  margin-bottom: 1.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
 .primary-button {
   padding: var(--button-padding);
   background: var(--primary-button-bg-color);
   color: var(--primary-button-text-color);
-  border-radius: var(--button-border-radius);
-  margin-bottom: 1rem;
-
+  border-radius: var(--border-radius);
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -87,9 +128,7 @@ h6 {
   padding: var(--button-padding);
   background: var(--secondary-button-bg-color);
   color: var(--secondary-button-text-color);
-  border-radius: var(--button-border-radius);
-  margin-bottom: 1rem;
-  border: 1px solid var(--secondary-button-border-color);
+  border-radius: var(--border-radius);
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -146,6 +185,19 @@ h6 {
   /* padding: 1rem; */
 }
 
+.exercise-choose-exercise {
+  padding: var(--button-padding);
+  background: var(--choose-exercise-button-bg-color);
+  color: var(--choose-exercise-button-secondary-text-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: box-shadow 0.2s cubic-bezier(0.37, 0, 0.63, 1),
+    background 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
 .exercise-title {
   margin-bottom: 2rem;
 }
@@ -162,14 +214,14 @@ h6 {
 }
 
 .exercise-modal {
-  height: 90vh;
   width: var(--mobile-width);
+  border-radius: var(--border-radius);
   padding: 1rem;
   position: fixed;
   background: white;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -10%);
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -177,7 +229,10 @@ h6 {
 }
 
 .exercise-modal-content {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .exercise-model-content-description {
@@ -185,14 +240,14 @@ h6 {
   font-weight: 700;
 }
 
-.exercise-modal-close-button {
+/* .exercise-modal-close-button {
   position: fixed;
   top: 1rem;
   right: 1rem;
   width: 30px;
   height: 30px;
   cursor: pointer;
-}
+} */
 
 .exercise-modal-content-explanation ol {
   padding-left: 1rem;
@@ -200,12 +255,6 @@ h6 {
 
 .exercise-modal-start-button {
   width: 100%;
-  color: var(--primary-title-color);
-  background: var(--primary-button-bg-color);
-  padding: primary;
-  cursor: pointer;
-  padding: var(--button-padding);
-  border-radius: var(--button-border-radius);
 }
 
 @media screen and (min-width: 500px) {
@@ -240,21 +289,30 @@ h6 {
     margin-right: auto;
   }
 
-  .exercise-choose-exercise {
-    /* width: var(--normal-width); */
-    /* width: 100%; */
-  }
-
   .exercise-modal {
     width: var(--normal-width);
   }
 }
 
 @media screen and (min-width: 900px) {
-  .primary-button:hover,
-  .exercise-choose-exercise:hover,
-  .exercise-modal-start-button:hover {
+  .exercise-choose-exercise:hover {
+    background: var(--choose-exercise-button-bg-hover-color);
+    cursor: pointer;
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .primary-button:hover {
     background: var(--primary-button-bg-hover-color);
+    cursor: pointer;
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .secondary-button:hover {
+    background: var(--secondary-button-bg-hover-color);
     cursor: pointer;
     --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);

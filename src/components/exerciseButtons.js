@@ -15,10 +15,20 @@ const exerciseButtons = () => {
     const steps = explanation.trim().split(". ")
     chooseExerciseEls[i].addEventListener("click", (e) => {
       e.preventDefault()
-      const exerciseModalEl = document.querySelector(".exercise-modal")
-      const titleEl = e.target.querySelector(".exercise-meditation-title")
-      exerciseModalEl.classList.remove("hidden")
-      if (title === titleEl.innerHTML) {
+
+      // Check to make sure the description, title, exercise-choose-exercise, or svg arrow has been clicked
+      const isDescription = e.target.innerHTML === description
+      const isTitle = e.target.innerHTML === title
+      const isExerciseButton = e.target.className === `space-between`
+      const isSvgArrow =
+        e.target.tagName === "svg" || e.target.tagName === `path`
+
+      const isCorrectClick =
+        isDescription || isTitle || isExerciseButton || isSvgArrow
+
+      if (isCorrectClick) {
+        const exerciseModalEl = document.querySelector(".exercise-modal")
+        exerciseModalEl.classList.remove("hidden")
         exerciseModal(title, description, steps).createSteps()
       }
     })
